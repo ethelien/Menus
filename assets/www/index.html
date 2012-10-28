@@ -1,0 +1,209 @@
+<!--
+  To change this template, choose Tools | Templates and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Catálogo</title>
+
+<link rel="stylesheet" href="./css/index.css">
+<script type='text/javascript' src='./js/cordova-2.0.0.js'></script>
+<script src="./js/jquery-1.7.2.min.js"></script>
+<script src="./js/jquery.jsonp-2.2.1.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="./js/iscroll.js"></script>
+<script type="text/javascript">
+
+var myScroll1,myScroll2,myScroll3,myScroll4;
+
+function loaded() {
+	setTimeout(function () {
+		myScroll1 = new iScroll('valor1');
+		myScroll2 = new iScroll('valor2');
+		myScroll3 = new iScroll('valor3');
+		myScroll4 = new iScroll('valor4');
+	}, 1000);
+}
+window.addEventListener('load', loaded, false);
+</script>
+</head>
+<body onload="onBodyLoad()">
+
+		<div id="base">
+		
+			<div id="mask">
+			
+				<div class="item" id="item0">
+					<img id='imagen_principal' src="./img/menu.jpg" height='150' width='150' style="margin-top: 20px"/>
+				</div>
+			
+				<div class="item" id="item1">
+				
+					<TABLE class="maintable" cellspacing="10px" cellpadding="2px" border="0">
+					 	<tbody>
+						 	<tr>
+						 		<td class="izq">
+									<div id="valor1" class="valores">
+									
+									
+									<div id="wrapper">
+									    <div id="scroll-content">
+									  	 	<TABLE align="center" id="listado1" class="listado">
+								  				<tr class="filas" id="fila" style="display:none">
+											    </tr>
+											</TABLE>
+									    </div>
+									</div>
+															
+									
+									</div>
+						 		
+						 		</td>
+						 		<td class="der">
+						 			<div class="img" id="img1">
+						 				 <img id="imagen1" height="60" width="60" /> 
+						 			</div>
+						 			
+						 			<div class="text" id="text1">
+						 			</div>
+						 			
+						 			<div class="precio" id="precio1">
+						 			</div>
+						 		</td>
+						 	</tr>
+						 	
+					 	</tbody>
+					</TABLE>	
+					
+				</div>
+				
+				<div class="item" id="item2">
+				
+					<TABLE class="maintable" cellspacing="10px" cellpadding="2px" border="0">
+					 	<tbody>
+						 	<tr>
+						 		<td class="izq">
+									<div id="valor2" class="valores">
+									
+										<TABLE align="center" id="listado2" class="listado">
+							  				<tr class="filas" id="fila" style="display:none">
+										    </tr>
+										</TABLE>						
+									
+									</div>
+						 		
+						 		</td>
+						 		<td class="der">
+						 			<div class="img" id="img2">
+						 				 <img id="imagen2" height="120" width="200" /> 
+						 			</div>
+						 			
+						 			<div class="text" id="text2">
+						 			</div>
+						 			
+						 			<div class="precio" id="precio2">
+						 			</div>
+						 		</td>
+						 	</tr>
+						 	
+					 	</tbody>
+					</TABLE>	
+									
+				</div>
+				
+				<div class="item" id="item3">
+				
+					<TABLE class="maintable" cellspacing="10px" cellpadding="2px" border="0">
+					 	<tbody>
+						 	<tr>
+						 		<td class="izq">
+									<div id="valor3" class="valores">
+									
+										<TABLE align="center" id="listado3" class="listado">
+							  				<tr class="filas" id="fila" style="display:none">
+										    </tr>
+										</TABLE>						
+									
+									</div>
+						 		
+						 		</td>
+						 		<td class="der">
+						 			<div class="img" id="img3">
+						 				 <img id="imagen3" height="120" width="200" /> 
+						 			</div>
+						 			
+						 			<div class="text" id="text3">
+						 			</div>
+						 			
+						 			<div class="precio" id="precio3">
+						 			</div>
+						 		</td>
+						 	</tr>
+						 	
+					 	</tbody>
+					</TABLE>	
+					
+				</div>
+			
+			    <div class="item" id="item4">
+				
+					<TABLE class="maintable" cellspacing="10px" cellpadding="2px" border="0">
+					 	<tbody>
+						 	<tr>
+						 		<td class="izq">
+									<div id="valor4" class="valores">
+									
+										<TABLE align="center" id="listado4" class="listado">
+							  				<tr class="filas" id="fila" style="display:none">
+										    </tr>
+										</TABLE>						
+									
+									</div>
+						 		
+						 		</td>
+						 		<td class="der">
+						 			<div class="img" id="img4">
+						 				 <img id="imagen4" height="120" width="200" /> 
+						 			</div>
+						 			
+						 			<div class="text" id="text4">
+						 			</div>
+						 			
+						 			<div class="precio" id="precio4">
+						 			</div>
+						 		</td>
+						 	</tr>
+						 	
+					 	</tbody>
+					</TABLE>	
+									
+				</div>
+			
+			</div>
+			
+		</div>
+		
+		<footer>
+		
+			<button class="atras" id="atras" style="display:none">Atrás</button>
+		
+			<button class="menu" id="menu" style="display:none">Menú principal</button>
+			
+			<button class="adelante" id="adelante" style="display:none">Adelante</button>
+			
+			
+			<button class="menu_botones" id="entrantes" value="1">Entrantes</button>
+		
+			<button class="menu_botones" id="primeros" value="2">Primeros</button>
+			
+			<button class="menu_botones" id="segundos" value="3">Segundos</button>
+			
+			<button class="menu_botones" id="postres" value="4">Postres</button>	
+			
+		</footer>	
+
+</body>
+</html>
