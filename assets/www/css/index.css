@@ -60,6 +60,23 @@ body {
 	width: 48%;
 }
 
+#español,#ingles,#chino{
+      width: 48px;
+      height: 48px;
+}
+
+#español{
+      background:  url('../img/spain.png') no-repeat top;
+}
+
+#ingles{
+	   background: url('../img/english.png') no-repeat top;
+}
+
+#chino{
+	   background: url('../img/china.png') no-repeat top;
+}
+
 
 .valores{
 	margin-left:3px;
@@ -67,6 +84,16 @@ body {
 	height:200px;
 	background:none;
 	border: 3px solid #b85f00;
+}
+
+.listado{
+	 width: 100%;
+	 border-spacing: 2px 1px;	
+}
+
+.filas{
+    background-color: #EAC26C;
+    width: 100%;
 }
 
 #valor1,#valor2,#valor3,#valor4{
@@ -82,7 +109,9 @@ body {
 }
 
 img{
-	border: none;
+	border-color: #EAC26C;
+	height: 100px;
+	width: 130px;
 	margin-top: 10px;
 }
 
@@ -125,7 +154,6 @@ img{
 	margin-top: 20px;
 	height:10px;
 }
-
 
 
 footer {

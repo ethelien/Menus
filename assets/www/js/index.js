@@ -15,10 +15,27 @@
  var tabla=1;
  var variable;
  var N_Cartas=4;
- 
+ var idioma="español"; 
  
  $(document).ready(function() {
 	 
+	 $('button.español').click(function () {
+
+		 idioma="español";
+		 cambio_idioma();
+	 });
+	 
+	 $('button.ingles').click(function () {
+
+		 idioma="ingles";
+		 cambio_idioma();
+	 });
+	 
+	 $('button.chino').click(function () {
+
+		 idioma="chino";
+		 cambio_idioma();
+	 });
 	 
 	 $('button.atras').click(function () {
 
@@ -41,6 +58,7 @@
 		 if(div_siguiente<0)
 			 div_siguiente=0;
 	 });
+	 
 	 
 	 $('button.menu').click(function () {
 
@@ -105,11 +123,67 @@
 		 $('#base').scrollTo($('button.atras').attr('#item2'), 0);
 		 // ALGO RARO AQUI
 	 } 
+ 	
+ 	function cambio_idioma(){
+ 		
+ 		if(idioma=="español"){
+ 			document.getElementById("atras").innerHTML="Atrás";
+ 			document.getElementById("menu").innerHTML="Menú Principal";
+ 			document.getElementById("adelante").innerHTML="Adelante";
+ 			document.getElementById("entrantes").innerHTML="Entrantes";
+ 			document.getElementById("primeros").innerHTML="Primeros";
+ 			document.getElementById("segundos").innerHTML="Segundos";
+ 			document.getElementById("postres").innerHTML="Postres";
+ 		    obtenerDatos(1);
+ 		}
+ 		
+		if(idioma=="ingles"){
+			
+ 			document.getElementById("atras").innerHTML="Back";
+ 			document.getElementById("menu").innerHTML="Main Menu";
+ 			document.getElementById("adelante").innerHTML="Forward";
+ 			document.getElementById("entrantes").innerHTML="Entrants";
+ 			document.getElementById("primeros").innerHTML="First";
+ 			document.getElementById("segundos").innerHTML="Seconds";
+ 			document.getElementById("postres").innerHTML="Dessert";
+ 			delete_table();
+
+ 		}
+		
+	if(idioma=="chino"){
+			
+ 			document.getElementById("atras").innerHTML="背面";
+ 			document.getElementById("menu").innerHTML="主菜单";
+ 			document.getElementById("adelante").innerHTML="前";
+ 			document.getElementById("entrantes").innerHTML="起动器";
+ 			document.getElementById("primeros").innerHTML="第一";
+ 			document.getElementById("segundos").innerHTML="秒播放";
+ 			document.getElementById("postres").innerHTML="甜品";
+ 			delete_table();
+ 		}
+ 		
+ 	}
 
    
     function onBodyLoad(){   	
-
 	    obtenerDatos(tabla);
+    }
+    
+    function delete_table(){
+        var table = document.getElementById("listado1");
+        //or use : var table = document.all.tableid;
+        for(var i = table.rows.length - 1; i > 0; i--)
+        {
+        table.deleteRow(i);
+        }
+    	setTimeout(function(){restart();},500);
+
+    }
+    
+    function restart(){
+    	par=0;
+    	tabla=1;
+        obtenerDatos(tabla);
     }
     
     function addNewRow()
@@ -140,7 +214,7 @@
     	
         	variable=tabla;
         	$.ajax({
-	            url: 'http://kaiharo.16mb.com/catalogo.php?tipo=listado'+tabla,
+	            url: 'http://kaiharo.16mb.com/catalogo.php?tipo=listado'+tabla+"&idioma="+idioma,
 	            dataType: 'jsonp',
 	            jsonp: 'jsoncallback',
 	            type:'get',
@@ -172,7 +246,7 @@
     function Cargar_valores(id_elemento,tabla){
 
         $.ajax({
-            url: 'http://kaiharo.16mb.com/atributos.php?tipo=listado'+tabla+"&busqueda="+id_elemento,
+            url: 'http://kaiharo.16mb.com/atributos.php?tipo=listado'+tabla+"&busqueda="+id_elemento+"&idioma="+idioma,
             dataType: 'jsonp',
             jsonp: 'jsoncallback',
             type:'get',
