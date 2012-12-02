@@ -16,13 +16,20 @@
  var variable;
  var N_Cartas=4;
  var idioma="español"; 
+ var Numero_mesa;
  
  $(document).ready(function() {
+	 
+	 $('.validar').click(function () {
+		 Numero_mesa=document.getElementById('mesa_value').value;
+		 window.location.href='#close';
+	 });
 	 
 	 $('button.español').click(function () {
 
 		 idioma="español";
 		 cambio_idioma();
+		 alert(document.getElementById('mesa_value').value);
 	 });
 	 
 	 $('button.ingles').click(function () {
@@ -35,6 +42,17 @@
 
 		 idioma="chino";
 		 cambio_idioma();
+	 });
+	 
+	 
+	 $('button.camarero').click(function () {
+
+		 alert("Llamando al camarero!");
+	 });
+	 
+	 $('button.cuenta').click(function () {
+
+		 alert("En breves momentos le traemos la cuenta a la mesa "+Numero_mesa);
 	 });
 	 
 	 $('button.atras').click(function () {
@@ -134,7 +152,7 @@
  			document.getElementById("primeros").innerHTML="Primeros";
  			document.getElementById("segundos").innerHTML="Segundos";
  			document.getElementById("postres").innerHTML="Postres";
- 		    obtenerDatos(1);
+ 			delete_table();
  		}
  		
 		if(idioma=="ingles"){
@@ -165,7 +183,8 @@
  	}
 
    
-    function onBodyLoad(){   	
+    function onBodyLoad(){ 
+    	window.location.href='#login_form';
 	    obtenerDatos(tabla);
     }
     
@@ -173,9 +192,19 @@
         var table = document.getElementById("listado1");
         //or use : var table = document.all.tableid;
         for(var i = table.rows.length - 1; i > 0; i--)
-        {
-        table.deleteRow(i);
-        }
+        	{
+        	table.deleteRow(i);
+        	}
+        
+        for (var i=1; i<=N_Cartas;i++)
+        	{
+        	var im="img"+i;
+        	var re="text"+i;
+        	var pr="precio"+i;
+        	document.getElementById(im).innerHTML ="<img id=imagen"+i+">";
+      	  	document.getElementById(re).innerHTML ="";
+      	  	document.getElementById(pr).innerHTML ="";
+        	}
     	setTimeout(function(){restart();},500);
 
     }
@@ -194,7 +223,7 @@
       var newRow = TABLE.insertRow(-1);
       
       if(par=='1'){
-      	newRow.style.background = "#E2BB68";
+      	newRow.style.background = "#a6ccee";
       	par--;
       }
       

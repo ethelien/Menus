@@ -32,16 +32,58 @@ window.addEventListener('load', loaded, false);
 </head>
 <body onload="onBodyLoad()">
 
+  		<!-- popup form #1 -->
+        <a href="#x" class="overlay" id="login_form"></a>
+        <div class="popup">
+            <h2>Mesa en la que se sentarán los comensales:</h2>
+            <div>
+                <input type="text" id="mesa_value" value=""/>
+            </div>
+            <input type="button" class="validar" value="Aceptar"/>
+
+            <a class="close" href="#close"></a>
+        </div>
+
 		<div id="base">
 		
 			<div id="mask">
 			
 				<div class="item" id="item0">
-					<img id='imagen_principal' src="./img/menu.jpg" height='150' width='150' style="margin-top: 20px"/>
+					<img id='imagen_principal' src="./img/menu.jpg" height='250' width='250' style="margin-top: 20px"/>
 					<div id="idiomas">
+						<h2>Idiomas: </h2>
 						<button class="español" id='español'/>
 						<button class="ingles" id='ingles' />
 						<button class="chino" id='chino'/>
+					</div>
+					
+					<div id="Servicios">
+						<h2>Servicios: </h2>
+					
+							
+							<TABLE cellspacing="10px" cellpadding="2px" border="0" align="center">
+							 	<tbody>
+								 	<tr>
+								 		<td>
+											<button class="camarero" id='camarero'/>
+								 		</td>
+								 		<td>
+								 			<button class="cuenta" id='cuenta'/>
+								 		</td>
+								 	</tr>
+								 	
+								 	<tr>
+								 		<td>
+											<h3>Avisar Camarero</h3>
+								 		</td>
+								 		<td>
+											<h3>Pedir Cuenta</h3>		
+								 		</td>
+								 	</tr>
+								 	
+							 	</tbody>
+							</TABLE>
+								
 					</div>
 				
 				</div>
@@ -70,7 +112,7 @@ window.addEventListener('load', loaded, false);
 						 		</td>
 						 		<td class="der">
 						 			<div class="img" id="img1">
-						 				 <img id="imagen1" style="border:6px"/> 
+						 				 <img id="imagen1"/> 
 						 			</div>
 						 			
 						 			<div class="text" id="text1">
